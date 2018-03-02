@@ -30,6 +30,12 @@ function moleCreation(){
 }
 
 
+function initiateApp(){
+    applyEventHandlers()
+    $(".moleBox").click(function(){
+        $(".diglettPic").toggleClass('up');
+      })
+}
 
 function applyEventHandlers(){
     $('.game-area').on('click', '.mole', moleClicked )
