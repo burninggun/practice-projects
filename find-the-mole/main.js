@@ -48,7 +48,7 @@ function moleClicked(){
     var boxClicked = $(this).attr('grid');
     var boxCol = boxClicked[0];
     var boxRow = boxClicked[1];
-    if (array[boxCol][boxRow] !==null{
+    if (array[boxCol][boxRow] !==null){
         array[boxCol][boxRow] = null;
     }
     stopPopUp();
