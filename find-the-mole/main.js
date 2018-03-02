@@ -39,7 +39,7 @@ function moleClicked(){
     var clickCount = $('.clickCounter>span').text();
     clickCount = parseInt(clickCount);
     clickCount+=1;
-    updateStats(clickCount)
+    updateStats(clickCount);
     
     stopPopUp();
 }
