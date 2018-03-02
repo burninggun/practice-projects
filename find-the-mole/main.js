@@ -31,16 +31,17 @@ function applyEventHandlers(){
 }
 
 function moleClicked(){
-    var moleClick = 1;
-
-    updateStats(moleClick)
+    var clickCount = $('.clickCounter>span').text();
+    clickCount = parseInt(clickCount);
+    clickCount+=1;
+    updateStats(clickCount)
 }
 
-function updateStats(moleClick){
-    updateClickCounter();
+function updateStats(clicks){
+    updateClickCounter(clicks);
 }
 
-function updateClickCounter(){
-
+function updateClickCounter(clicks){
+    $('.clickCounter>span').text(clicks)
 }
 
