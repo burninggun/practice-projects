@@ -6,3 +6,39 @@
     height: 100px;
     background-color:red;
 }
+
+.moleBox{
+    border: 1px solid black;
+    width:100px;
+    height: 100px;
+    margin: auto;
+    position: relative;
+
+    z-index:0;
+}
+
+.dirt{
+    background-image: url(dirt.png);
+    width: 100%;
+    height: 50%;
+    z-index: 1000;
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.diglett{
+    background-image: url(mole.png);
+    width: 100%;
+    height: 200%;
+    position: absolute;
+    bottom: -30%;
+    z-index: -1;
+    /* left: 20px; */
+    transition: bottom 0.5s ease;
+}
+
+.diglett.up{
+    bottom: 8%;
+    z-index: 10;
+}
