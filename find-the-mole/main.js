@@ -24,6 +24,9 @@ $(document).ready(initiateApp);
 
 function initiateApp(){
     applyEventHandlers()
+    $(".moleBox").click(function(){
+        $(".diglettPic").toggleClass('up');
+      })
 }
 
 function applyEventHandlers(){
