@@ -1,6 +1,6 @@
 
-
 $(document).ready(initiateApp);
+
 
 function initiateApp(){
     applyEventHandlers()
@@ -31,7 +31,6 @@ function moleCreation(){
 
 
 
-
 function applyEventHandlers(){
     $('.game-area').on('click', '.mole', moleClicked )
 }
@@ -41,6 +40,8 @@ function moleClicked(){
     clickCount = parseInt(clickCount);
     clickCount+=1;
     updateStats(clickCount)
+    
+    stopPopUp();
 }
 
 function updateStats(clicks){
@@ -49,5 +50,9 @@ function updateStats(clicks){
 
 function updateClickCounter(clicks){
     $('.clickCounter>span').text(clicks)
+}
+
+function stopPopUp(){
+    $('.mole').removeClass('.diglett.up');    
 }
 
