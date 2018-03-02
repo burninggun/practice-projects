@@ -38,14 +38,15 @@ function initiateApp(){
 }
 
 function applyEventHandlers(){
-    $('.game-area').on('click', '.diglettPic', moleClicked )
+    $('.diglettPic').click(moleClicked)
 }
 
 function moleClicked(){
+    console.log(this);
     $(".game-area").css('pointer-events', 'none');
-    setTimeout(function(){
-        $(".diglettPic").removeClass('up');
-    }, 250);
+    setTimeout((function(){
+        $(this).removeClass('up');
+    }).bind(this), 250);
     var clickCount = $('.clickCounter>span').text();
     clickCount = parseInt(clickCount);
     clickCount+=1;
