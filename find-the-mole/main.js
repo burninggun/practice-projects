@@ -28,21 +28,33 @@ function moleCreation(){
 
 
 function initiateApp(){
+<<<<<<< HEAD
     applyEventHandlers();
 
     $(".moleBox").click(function(){
         $(".diglettPic").toggleClass('up');
       })
+=======
+    applyEventHandlers()
+    // $(".moleBox").click(function(){
+    //     $(".diglettPic").toggleClass('up');
+    //   })
+>>>>>>> 2cf43bdfabf442b8ee151c05d0fcd2f29a22de5b
 }
 
 function applyEventHandlers(){
-    $('.game-area').on('click', '.mole', moleClicked )
+    $('.game-area').on('click', '.diglettPic', moleClicked )
 }
 
 function moleClicked(){
+    $(".game-area").css('pointer-events', 'none');
+    setTimeout(function(){
+        $(".diglettPic").removeClass('up');
+    }, 250);
     var clickCount = $('.clickCounter>span').text();
     clickCount = parseInt(clickCount);
     clickCount+=1;
+<<<<<<< HEAD
     updateStats(clickCount);
 
     var boxClicked = $(this).attr('grid');
@@ -51,6 +63,12 @@ function moleClicked(){
     if (array[boxCol][boxRow] !==null){
         array[boxCol][boxRow] = null;
     }
+=======
+    updateStats(clickCount)
+    setTimeout(function(){
+        $(".game-area").css('pointer-events', 'auto')
+    }, 300),
+>>>>>>> 2cf43bdfabf442b8ee151c05d0fcd2f29a22de5b
     stopPopUp();
 }
 
