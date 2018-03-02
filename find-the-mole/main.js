@@ -2,9 +2,6 @@
 $(document).ready(initiateApp);
 
 
-function initiateApp(){
-    applyEventHandlers()
-}
 
 var array = [
     col = [null, null, null],
@@ -31,7 +28,8 @@ function moleCreation(){
 
 
 function initiateApp(){
-    applyEventHandlers()
+    applyEventHandlers();
+
     $(".moleBox").click(function(){
         $(".diglettPic").toggleClass('up');
       })
@@ -46,7 +44,13 @@ function moleClicked(){
     clickCount = parseInt(clickCount);
     clickCount+=1;
     updateStats(clickCount);
-    
+
+    var boxClicked = $(this).attr('grid');
+    var boxCol = boxClicked[0];
+    var boxRow = boxClicked[1];
+    if (array[boxCol][boxRow] !==null{
+        array[boxCol][boxRow] = null;
+    }
     stopPopUp();
 }
 
