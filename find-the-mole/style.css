@@ -1,3 +1,9 @@
+body{
+    height:100vh;
+    width:100vw;
+    background: url('bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
 .clickCounter{
     font-size: 20px;
 }
@@ -38,5 +44,63 @@
   .diglettPic.up{
     bottom: -30%;
     z-index: 10;
-    height: 118%;
-  }
+      height: 118%;
+}
+
+
+.game-area {
+    margin: 0 auto;
+    border: 2px solid black;
+    height: 30%;
+    width:30%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.c1r1{
+    background-color:yellow;
+    grid-column: 1/2;
+    grid-row: 1/1
+}
+.c1r2{
+    background-color:magenta;
+    grid-column: 2/3;
+    grid-row: 1/1;
+}
+.c1r3{
+    background-color:darkturquoise;
+    grid-column: 3/4;
+    grid-row: 1/1
+}
+.c2r1{
+    background-color:red;
+    grid-column: 1/2;
+    grid-row: 2/2
+}
+.c2r2{
+    background-color:orange;
+    grid-column: 2/3;
+    grid-row: 2/2
+}
+.c2r3{
+    background-color:pink;
+    grid-column: 3/4;
+    grid-row: 2/2
+}
+.c3r1{
+    background-color:blue;
+    grid-column: 1/2;
+    grid-row: 3/3
+}
+.c3r2{
+    background-color:brown;
+    grid-column: 2/3;
+    grid-row: 3/3
+}
+.c3r3{
+    background-color:green;
+    grid-column: 3/4;
+    grid-row: 3/3
+}
+
