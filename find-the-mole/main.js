@@ -1,26 +1,34 @@
 
+$(document).ready(initiateApp);
+
+
+function initiateApp(){
+    applyEventHandlers()
+}
 
 var array = [
     col = [null, null, null],
     col = [null, null, null],
     col = [null, null, null]
-]
+];
 
-function randomMole(mole){
-    for(var i=0; i<array.length; i++){
-        for(var j=0;j<array[i].length; j++){
-
-        }
-        var randomCol = Math.floor(Math.random()* array.length);
-        var randomRow = Math.floor(Math.random()* array[i].length);
-        array[randomCol][randomRow]='mole'
-        $('.game_area').append('mole');        
-    }
+function randomMoleIndex(){
+    var randomCol = Math.floor(Math.random() * array.length-1);
+    var randomRow = Math.floor(Math.random() * array[randomCol].length)-1;
+    return [randomCol, randomRow]
 }
 
+function moleCreation(){
+    var moleCreated=false;
 
+    var moleCoordinate= randomMoleIndex();
+    while( array[moleCoordinate[0]][moleCoordinate[1]]!==null){
+        moleCoordinate= randomMoleIndex();
+    }
+    array[moleCoordinate[0]][moleCoordinate[1]]='mole';
+    $('.game_area').append('mole');
+}
 
-$(document).ready(initiateApp);
 
 function initiateApp(){
     applyEventHandlers()
@@ -38,6 +46,8 @@ function moleClicked(){
     clickCount = parseInt(clickCount);
     clickCount+=1;
     updateStats(clickCount)
+    
+    stopPopUp();
 }
 
 function updateStats(clicks){
@@ -46,5 +56,9 @@ function updateStats(clicks){
 
 function updateClickCounter(clicks){
     $('.clickCounter>span').text(clicks)
+}
+
+function stopPopUp(){
+    $('.mole').removeClass('.diglett.up');    
 }
 
