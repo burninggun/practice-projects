@@ -10,6 +10,16 @@ function applyEventHandlers(){
 }
 
 function moleClicked(){
+    var moleClick = 1;
+
+    updateStats(moleClick)
+}
+
+function updateStats(moleClick){
+    updateClickCounter();
+}
+
+function updateClickCounter(){
 
 }
 
