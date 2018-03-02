@@ -32,21 +32,27 @@ function moleCreation(){
 
 function initiateApp(){
     applyEventHandlers()
-    $(".moleBox").click(function(){
-        $(".diglettPic").toggleClass('up');
-      })
+    // $(".moleBox").click(function(){
+    //     $(".diglettPic").toggleClass('up');
+    //   })
 }
 
 function applyEventHandlers(){
-    $('.game-area').on('click', '.mole', moleClicked )
+    $('.game-area').on('click', '.diglettPic', moleClicked )
 }
 
 function moleClicked(){
+    $(".game-area").css('pointer-events', 'none');
+    setTimeout(function(){
+        $(".diglettPic").removeClass('up');
+    }, 250);
     var clickCount = $('.clickCounter>span').text();
     clickCount = parseInt(clickCount);
     clickCount+=1;
     updateStats(clickCount)
-    
+    setTimeout(function(){
+        $(".game-area").css('pointer-events', 'auto')
+    }, 300),
     stopPopUp();
 }
 
