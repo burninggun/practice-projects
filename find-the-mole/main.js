@@ -1,4 +1,5 @@
 
+$(document).ready(initiateApp);
 
 var array = [
     col = [null, null, null],
@@ -18,10 +19,6 @@ function randomMole(mole){
     }
 }
 
-
-
-$(document).ready(initiateApp);
-
 function initiateApp(){
     applyEventHandlers()
 }
@@ -35,6 +32,8 @@ function moleClicked(){
     clickCount = parseInt(clickCount);
     clickCount+=1;
     updateStats(clickCount)
+    
+    stopPopUp();
 }
 
 function updateStats(clicks){
@@ -43,5 +42,9 @@ function updateStats(clicks){
 
 function updateClickCounter(clicks){
     $('.clickCounter>span').text(clicks)
+}
+
+function stopPopUp(){
+    $('.mole').removeClass('.diglett.up');    
 }
 
